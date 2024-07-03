@@ -11,16 +11,37 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:background="@color/chathamsBlue"
+        tools:context=".MainPageActivity">
 
-        <TextView
+        <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:stateListAnimator="@null"
+            android:text="@string/go_to_login_page"
+            android:textAllCaps="true"
+            android:textColor="@color/casablanca"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:translationZ="4dp"
+            app:backgroundTint="@color/colorButtonBackground"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_go_to_login"
+            app:iconGravity="end"
+            app:iconPadding="8dp"
+            app:iconSize="18dp"
+            app:iconTint="@color/casablanca"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/amber"
+            app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent"
+            app:strokeColor="@color/copper"
+            app:strokeWidth="4dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

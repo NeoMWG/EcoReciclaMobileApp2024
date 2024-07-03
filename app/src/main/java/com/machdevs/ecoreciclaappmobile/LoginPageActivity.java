@@ -9,24 +9,23 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.databinding.DataBindingUtil;
 
-import com.machdevs.ecoreciclaappmobile.databinding.ActivityMainBinding;
+import com.machdevs.ecoreciclaappmobile.databinding.ActivityLoginPageBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginPageActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+    ActivityLoginPageBinding bindingLoginPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
+        bindingLoginPage = DataBindingUtil.setContentView(this, R.layout.activity_login_page);
     }
 }
