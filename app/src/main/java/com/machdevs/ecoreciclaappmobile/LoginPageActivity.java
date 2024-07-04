@@ -13,19 +13,17 @@ import com.machdevs.ecoreciclaappmobile.databinding.ActivityLoginPageBinding;
 
 public class LoginPageActivity extends AppCompatActivity {
 
-    ActivityLoginPageBinding bindingLoginPage;
+    private ActivityLoginPageBinding bindingLoginPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
+        bindingLoginPage = DataBindingUtil.setContentView(this, R.layout.activity_login_page);
         EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        bindingLoginPage = DataBindingUtil.setContentView(this, R.layout.activity_login_page);
     }
 }

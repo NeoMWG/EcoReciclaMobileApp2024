@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">EcoReciclaAppMobile2024</string>
     <string name="go_to_login_page">GO TO LOGIN PAGE</string>
+    <string name="ecorecicla_login">EcoRecicla \n\t\t\t\t Login</string>
+    <string name="et_password_login_page">Password</string>
+    <string name="et_email_login_page">User</string>
+    <string name="bt_login_login_page">Login</string>
+    <string name="bt_register_login_page">Register</string>
+    <string name="by_mach">By Mach</string>
+    <string name="inicio_de_sesion_tv">Login</string>
 </resources>

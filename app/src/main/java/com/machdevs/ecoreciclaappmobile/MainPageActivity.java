@@ -1,6 +1,8 @@
 package com.machdevs.ecoreciclaappmobile;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,7 @@ public class MainPageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        bindingMainPage = DataBindingUtil.setContentView(this, R.layout.activity_main);
         EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -25,7 +28,19 @@ public class MainPageActivity extends AppCompatActivity {
             return insets;
         });
 
-        bindingMainPage = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setupListeners();
+    }
 
+    private void setupListeners() {
+        bindingMainPage.btnGoToLoginMa.setOnClickListener(this::onGoToLoginPageButtonClicked);
+    }
+
+    private void onGoToLoginPageButtonClicked(View view) {
+        navigatorToLoginPage();
+    }
+
+    private void navigatorToLoginPage() {
+        Intent intent = new Intent(this, LoginPageActivity.class);
+        startActivity(intent);
     }
 }
