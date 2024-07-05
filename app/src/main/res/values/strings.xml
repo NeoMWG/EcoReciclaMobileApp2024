@@ -7,5 +7,5 @@
     <string name="bt_login_login_page">Login</string>
     <string name="bt_register_login_page">Register</string>
     <string name="by_mach">By Mach</string>
-    <string name="inicio_de_sesion_tv">Login</string>
+    <string name="inicio_de_sesion_tv">Inicio de Sesion</string>
 </resources>

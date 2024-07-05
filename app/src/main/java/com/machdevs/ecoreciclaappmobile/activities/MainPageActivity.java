@@ -1,4 +1,4 @@
-package com.machdevs.ecoreciclaappmobile;
+package com.machdevs.ecoreciclaappmobile.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,16 +11,17 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.databinding.DataBindingUtil;
 
+import com.machdevs.ecoreciclaappmobile.R;
 import com.machdevs.ecoreciclaappmobile.databinding.ActivityMainBinding;
 
 public class MainPageActivity extends AppCompatActivity {
 
-    private ActivityMainBinding bindingMainPage;
+    private ActivityMainBinding mainBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bindingMainPage = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -32,7 +33,7 @@ public class MainPageActivity extends AppCompatActivity {
     }
 
     private void setupListeners() {
-        bindingMainPage.btnGoToLoginMa.setOnClickListener(this::onGoToLoginPageButtonClicked);
+        mainBinding.btnGoToLoginMa.setOnClickListener(this::onGoToLoginPageButtonClicked);
     }
 
     private void onGoToLoginPageButtonClicked(View view) {
@@ -40,7 +41,7 @@ public class MainPageActivity extends AppCompatActivity {
     }
 
     private void navigatorToLoginPage() {
-        Intent intent = new Intent(this, LoginPageActivity.class);
+        Intent intent = new Intent(MainPageActivity.this, LoginPageActivity.class);
         startActivity(intent);
     }
 }

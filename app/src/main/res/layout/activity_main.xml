@@ -11,8 +11,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/chathamsBlue"
-        tools:context=".MainPageActivity">
+        android:background="@color/indigoBlue"
+        tools:context=".activities.MainPageActivity">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnGoToLoginMa"
@@ -27,7 +27,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:translationZ="4dp"
-            app:backgroundTint="@color/colorButtonBackground"
+            app:backgroundTint="@color/card_background_dark"
             app:cornerRadius="8dp"
             app:icon="@drawable/ic_go_to_login"
             app:iconGravity="end"
@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="@color/amber"
             app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent"
-            app:strokeColor="@color/copper"
+            app:strokeColor="@color/card_background_dark"
             app:strokeWidth="4dp" />
 
 

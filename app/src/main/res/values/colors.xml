@@ -11,12 +11,18 @@
     <color name="mintGreen">#20603d</color>
     <color name="amber">#ff7e00</color>
     <color name="copper">#9e872b</color>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="colorButtonBackground">#FF018786</color>
-    <color name="colorButtonText">#FFFFFF</color>
-    <color name="colorButtonIcon">#FFFFFF</color>
-    <color name="colorButtonRipple">#FF018786</color>
-    <color name="colorButtonStroke">#6200EE</color>
+
+    <!-- Colores para el modo claro -->
+    <color name="card_background_light">#80FFFFFF</color> <!-- Fondo semi-transparente para el CardView -->
+    <color name="text_primary_light">#FFFFFF</color>
+    <color name="text_secondary_light">#FFAB00</color> <!-- Color ámbar para hints y textos secundarios -->
+    <color name="button_background_light">#000000</color>
+    <color name="button_text_light">#FFFFFF</color>
+
+    <!-- Colores para el modo oscuro -->
+    <color name="card_background_dark">#80333333</color> <!-- Fondo semi-transparente oscuro para el CardView -->
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_dark">#FFAB00</color> <!-- Mantenemos el ámbar en modo oscuro -->
+    <color name="button_background_dark">#000000</color>
+    <color name="button_text_dark">#FFFFFF</color>
 </resources>

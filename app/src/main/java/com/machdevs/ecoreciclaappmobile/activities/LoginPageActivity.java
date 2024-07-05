@@ -1,4 +1,4 @@
-package com.machdevs.ecoreciclaappmobile;
+package com.machdevs.ecoreciclaappmobile.activities;
 
 import android.os.Bundle;
 
@@ -9,16 +9,17 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.databinding.DataBindingUtil;
 
-import com.machdevs.ecoreciclaappmobile.databinding.ActivityLoginPageBinding;
+import com.machdevs.ecoreciclaappmobile.R;
+import com.machdevs.ecoreciclaappmobile.databinding.ActivityLoginBinding;
 
 public class LoginPageActivity extends AppCompatActivity {
 
-    private ActivityLoginPageBinding bindingLoginPage;
+    private ActivityLoginBinding loginBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bindingLoginPage = DataBindingUtil.setContentView(this, R.layout.activity_login_page);
+        loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
