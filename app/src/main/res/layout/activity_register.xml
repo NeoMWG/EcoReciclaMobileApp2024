@@ -8,11 +8,11 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_login_page"
-        android:id="@+id/main"
-        tools:context=".activities.LoginPageActivity">
+        tools:context=".activities.RegisterActivity">
 
         <ImageView
             android:id="@+id/imageView"
@@ -62,7 +62,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/login"
+                    android:text="@string/registro"
                     android:textColor="?attr/colorOnSurface"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/por_favor_inicia_sesion_para_continuar"
+                    android:text="@string/por_favor_llena_los_campos_para_registrarte"
                     android:textColor="@color/copper"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -80,6 +80,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:hint="@string/nombre_completo"
+                    android:textColorHint="@color/card_background_light"
+                    app:boxBackgroundColor="#99000000">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:hint="@string/correo_electronico"
                     android:textColorHint="@color/card_background_light"
                     app:boxBackgroundColor="#99000000">
@@ -87,8 +101,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress"
-                        android:textColorHint="#BCAAA4" />
+                        android:inputType="textEmailAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -106,21 +119,36 @@
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/confirmar_contrasena"
+                    android:textColorHint="@color/card_background_light"
+                    app:boxBackgroundColor="#99000000"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <Button
-                    android:id="@+id/btnLogin"
+                    android:id="@+id/btnRegister"
+                    style="@style/CustomButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:text="@string/iniciar_sesion"
-                    style="@style/CustomButtonStyle"/>
+                    android:text="@string/registrarse" />
 
                 <TextView
-                    android:id="@+id/tvGoToRegister"
+                    android:id="@+id/tvGoToLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"
-                    android:text="@string/no_tienes_cuenta_registrate_aqui"
+                    android:text="@string/ya_tienes_cuenta_inicia_sesion"
                     android:textColor="@color/copper"
                     android:textSize="14sp"
                     android:textStyle="bold" />

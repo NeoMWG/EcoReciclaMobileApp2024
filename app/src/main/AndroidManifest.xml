@@ -13,16 +13,31 @@
         android:theme="@style/Theme.YourAppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".activities.LoginPageActivity"
+            android:name=".activities.TipsPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.StatisticsPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CategoriesPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PrincipalPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

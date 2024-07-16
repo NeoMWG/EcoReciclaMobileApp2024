@@ -25,4 +25,14 @@
     <color name="text_secondary_dark">#FFAB00</color> <!-- Mantenemos el ámbar en modo oscuro -->
     <color name="button_background_dark">#000000</color>
     <color name="button_text_dark">#FFFFFF</color>
+
+    <!-- Colores para el tema -->
+    <color name="primaryColor">#4CAF50</color>
+    <color name="primaryLightColor">#81C784</color>
+    <color name="primaryDarkColor">#388E3C</color>
+    <color name="secondaryColor">#FFC107</color>
+    <color name="secondaryLightColor">#FFD54F</color>
+    <color name="secondaryDarkColor">#FFA000</color>
+    <color name="primaryTextColor">#212121</color>
+    <color name="secondaryTextColor">#757575</color>
 </resources>

@@ -8,4 +8,22 @@
     <string name="bt_register_login_page">Register</string>
     <string name="by_mach">By Mach</string>
     <string name="inicio_de_sesion_tv">Inicio de Sesion</string>
+    <string name="iniciar_sesion">INICIAR SESION</string>
+    <string name="no_tienes_cuenta_registrate_aqui">¿No tienes cuenta? REGISTRATE AQUI</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="por_favor_inicia_sesion_para_continuar">Por favor inicia sesión para continuar</string>
+    <string name="login">LOGIN</string>
+    <string name="categorias_de_reciclaje">Categorías de Reciclaje</string>
+    <string name="categorias">Categorías</string>
+    <string name="estadisticas">Estadísticas</string>
+    <string name="consejos">Consejos</string>
+    <string name="bienvenido_a_ecorecicla">¡Bienvenido a EcoRecicla!</string>
+    <string name="registrarse">REGISTRARSE</string>
+    <string name="ya_tienes_cuenta_inicia_sesion">¿Ya tienes cuenta? INICIA SESION</string>
+    <string name="confirmar_contrasena">Confirmar contraseña</string>
+    <string name="nombre_completo">Nombre completo</string>
+    <string name="por_favor_llena_los_campos_para_registrarte">Por favor llena los campos para registrarte</string>
+    <string name="registro">REGISTRO</string>
+    <string name="estadisticas_de_reciclaje">Estadísticas de Reciclaje</string>
 </resources>

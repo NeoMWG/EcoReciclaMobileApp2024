@@ -1,5 +1,6 @@
 package com.machdevs.ecoreciclaappmobile.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -26,5 +27,29 @@ public class LoginPageActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        setupListeners();
+    }
+
+    private void setupListeners() {
+        loginBinding.btnLogin.setOnClickListener(v -> onLoginButtonClick());
+        loginBinding.tvGoToRegister.setOnClickListener(v -> onRegisterButtonClick());
+    }
+
+    private void onRegisterButtonClick() {
+        navigatorToRegisterPage();
+    }
+
+    private void onLoginButtonClick(){
+        navigatorToPrincipalPage();
+    }
+
+    private void navigatorToPrincipalPage() {
+        Intent intent = new Intent(LoginPageActivity.this, PrincipalPageActivity.class);
+        startActivity(intent);
+    }
+
+    private void navigatorToRegisterPage() {
+        Intent intent = new Intent(LoginPageActivity.this, RegisterActivity.class);
+        startActivity(intent);
     }
 }
