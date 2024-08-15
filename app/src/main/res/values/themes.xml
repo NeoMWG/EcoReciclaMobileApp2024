@@ -1,29 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.EcoReciclaAppMobile2024" parent="Theme.Material3.DayNight.NoActionBar"></style>
-
-    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">8dp</item>
-        <!-- Puedes personalizar más aspectos de la forma aquí -->
-        <!-- <item name="cornerSizeTopLeft">12dp</item> -->
-        <!-- <item name="cornerSizeTopRight">12dp</item> -->
-        <!-- <item name="cornerSizeBottomLeft">4dp</item> -->
-        <!-- <item name="cornerSizeBottomRight">4dp</item> -->
-    </style>
-
-    <style name="Theme.EcoReciclaAppMobile2024" parent="Base.Theme.EcoReciclaAppMobile2024" />
-
-    <style name="Theme.YourAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Base.Theme.EcoReciclaAppMobile2024" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Colores primarios del tema -->
-        <item name="colorPrimary">@color/text_secondary_light</item>
-        <item name="colorPrimaryVariant">@color/text_secondary_light</item>
-        <item name="colorOnPrimary">@color/text_primary_light</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
+        <item name="colorOnPrimary">@color/white</item>
 
         <!-- Colores secundarios del tema -->
-        <item name="colorSecondary">@color/text_secondary_light</item>
-        <item name="colorSecondaryVariant">@color/text_secondary_light</item>
-        <item name="colorOnSecondary">@color/text_primary_light</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
+        <item name="colorOnSecondary">@color/black</item>
 
         <!-- Colores de superficie -->
         <item name="colorSurface">@color/card_background_light</item>
@@ -36,17 +23,16 @@
         <!-- Estilos para el botón -->
         <item name="colorButtonNormal">@color/button_background_light</item>
         <item name="android:textColorPrimary">@color/button_text_light</item>
-    </style>
 
-    <!-- Estilo para la APP -->
-    <style name="Theme.EcoRecicla" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/secondaryColor</item>
-        <item name="colorSecondaryVariant">@color/card_background_dark</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <!-- Texto -->
         <item name="android:textColor">@color/copper</item>
         <item name="android:textColorSecondary">@color/secondaryTextColor</item>
+    </style>
+
+    <style name="Theme.EcoReciclaAppMobile2024" parent="Base.Theme.EcoReciclaAppMobile2024" />
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
     </style>
 </resources>

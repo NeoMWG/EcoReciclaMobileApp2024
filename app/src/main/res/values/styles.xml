@@ -8,4 +8,13 @@
         <item name="backgroundTint">@color/chathamsBlue</item>
         <item name="cornerRadius">8dp</item>
     </style>
+
+    <style name="ModernButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">16dp</item>
+        <item name="backgroundTint">@color/material_on_background_emphasis_medium</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="elevation">4dp</item>
+    </style>
 </resources>
