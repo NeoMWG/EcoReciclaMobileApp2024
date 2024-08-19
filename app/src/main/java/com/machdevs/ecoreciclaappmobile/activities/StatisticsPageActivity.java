@@ -26,17 +26,32 @@ public class StatisticsPageActivity extends AppCompatActivity {
         recyclingManager = new RecyclingManager(this);
 
         setSupportActionBar(binding.toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         setupRecyclerView();
+        setupSummary();
     }
 
     private void setupRecyclerView() {
         List<StatisticItem> statisticItems = generateStatistics();
-        adapter = new StatisticsAdapter(statisticItems);
+        adapter = new StatisticsAdapter(this, statisticItems);
         binding.recyclerViewStatistics.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerViewStatistics.setAdapter(adapter);
+    }
+
+    private void setupSummary() {
+        double totalRecycled = 0;
+        double totalValue = 0;
+        for (RecyclingCategory category : recyclingManager.getCategories()) {
+            totalRecycled += recyclingManager.calculateTotalAmountByCategory(category);
+            totalValue += recyclingManager.calculateTotalValueByCategory(category);
+        }
+
+        binding.tvTotalRecycled.setText(String.format("Total reciclado: %.2f kg", totalRecycled));
+        binding.tvTotalValue.setText(String.format("Valor total: $%.2f", totalValue));
     }
 
     private List<StatisticItem> generateStatistics() {
@@ -45,9 +60,10 @@ public class StatisticsPageActivity extends AppCompatActivity {
             double average = recyclingManager.calculateAverageByCategory(category);
             double max = recyclingManager.calculateMaxByCategory(category);
             double min = recyclingManager.calculateMinByCategory(category);
-            double total = recyclingManager.calculateTotalValueByCategory(category);
+            double totalValue = recyclingManager.calculateTotalValueByCategory(category);
+            double totalAmount = recyclingManager.calculateTotalAmountByCategory(category);
 
-            items.add(new StatisticItem(category.getName(), average, max, min, total, category.getUnit()));
+            items.add(new StatisticItem(category.getName(), average, max, min, totalValue, totalAmount, category.getUnit()));
         }
         return items;
     }

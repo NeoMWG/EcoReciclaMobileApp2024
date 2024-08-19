@@ -19,6 +19,12 @@
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceHeadline6" />
 
+        <com.machdevs.ecoreciclaappmobile.views.BarChartView
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp" />
+
         <TextView
             android:id="@+id/tvAverageAmount"
             android:layout_width="wrap_content"
@@ -42,6 +48,13 @@
 
         <TextView
             android:id="@+id/tvTotalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="?attr/textAppearanceBody1" />
+
+        <TextView
+            android:id="@+id/tvTotalAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
