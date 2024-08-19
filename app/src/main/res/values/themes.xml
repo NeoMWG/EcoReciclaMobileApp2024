@@ -5,6 +5,10 @@
         <item name="colorPrimaryVariant">@color/indigoBlue</item>
         <item name="colorOnPrimary">@color/white</item>
 
+        <item name="colorAccent">@color/casablanca</item>
+        <item name="colorControlActivated">@color/casablanca</item>
+        <item name="colorControlNormal">@color/casablanca</item>
+
         <!-- Colores secundarios -->
         <item name="colorSecondary">@color/amber</item>
         <item name="colorSecondaryVariant">@color/copper</item>

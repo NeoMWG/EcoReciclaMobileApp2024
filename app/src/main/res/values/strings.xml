@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EcoRecicla App Mobile 2024</string>
+    <string name="app_name">EcoRecicla</string>
     <string name="go_to_login_page">GO TO LOGIN PAGE</string>
     <string name="ecorecicla_login">EcoRecicla \n\t\t\t\t Login</string>
     <string name="et_password_login_page">Password</string>

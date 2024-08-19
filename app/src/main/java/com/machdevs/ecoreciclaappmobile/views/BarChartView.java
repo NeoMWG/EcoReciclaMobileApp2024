@@ -39,7 +39,7 @@ public class BarChartView extends View {
         textPaint = new Paint();
         textPaint.setColor(ContextCompat.getColor(getContext(), R.color.white));
         textPaint.setTextSize(30f);
-        textPaint.setTextAlign(Paint.Align.RIGHT);
+        textPaint.setTextAlign(Paint.Align.LEFT);
     }
 
     public void setPercentage(float percentage, int color) {
@@ -74,7 +74,7 @@ public class BarChartView extends View {
         canvas.drawRect(0, 0, width, height, backgroundPaint);
 
         // Dibuja la barra
-        float barWidth = currentWidth * width;
+        float barWidth = Math.max(currentWidth * width, 2); // Asegura un mínimo de 2 píxeles
         canvas.drawRect(0, 0, barWidth, height, barPaint);
 
         // Dibuja el porcentaje
@@ -82,6 +82,18 @@ public class BarChartView extends View {
         Rect bounds = new Rect();
         textPaint.getTextBounds(percentageText, 0, percentageText.length(), bounds);
         float textHeight = bounds.height();
-        canvas.drawText(percentageText, barWidth - 10, (height + textHeight) / 2, textPaint);
+        float textWidth = bounds.width();
+
+        float textX = Math.min(barWidth + 5, width - textWidth - 5); // 5 píxeles de margen
+        float textY = (height + textHeight) / 2;
+
+        // Cambia el color del texto si está fuera de la barra
+        if (textX > barWidth) {
+            textPaint.setColor(ContextCompat.getColor(getContext(), R.color.text_primary_dark));
+        } else {
+            textPaint.setColor(ContextCompat.getColor(getContext(), R.color.white));
+        }
+
+        canvas.drawText(percentageText, textX, textY, textPaint);
     }
 }

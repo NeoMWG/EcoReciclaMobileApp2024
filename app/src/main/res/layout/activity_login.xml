@@ -10,7 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"> <!-- Cambio realizado aquí -->
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main"
@@ -103,13 +103,19 @@
                         android:hint="@string/contrasena"
                         android:textColorHint="@color/card_background_light"
                         app:boxBackgroundColor="#99000000"
-                        app:passwordToggleEnabled="false">
+                        app:boxStrokeColor="@color/casablanca"
+                        app:hintTextColor="@color/card_background_light"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/card_background_light"
+                        app:endIconMode="password_toggle"
+                        app:errorIconDrawable="@null">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etPassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textPassword" />
+                            android:inputType="textPassword"
+                            android:paddingEnd="48dp"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <Button

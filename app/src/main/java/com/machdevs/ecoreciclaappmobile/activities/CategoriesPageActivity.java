@@ -25,15 +25,17 @@ public class CategoriesPageActivity extends AppCompatActivity {
         recyclingManager = new RecyclingManager(this);
 
         setSupportActionBar(binding.toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         setupRecyclerView();
     }
 
     private void setupRecyclerView() {
         List<RecyclingCategory> categories = recyclingManager.getCategories();
-        adapter = new CategoryAdapter(categories, this::openRecyclingEntryPage);
+        adapter = new CategoryAdapter(this, categories, this::openRecyclingEntryPage);
         binding.recyclerViewCategories.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerViewCategories.setAdapter(adapter);
     }

@@ -8,6 +8,15 @@
         <item name="cornerRadius">8dp</item>
     </style>
 
+    <!-- Actualizar estilo del Toolbar para aplicar el nuevo estilo de menú -->
+    <style name="AppToolbarStyle" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/chathamsBlue</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="navigationIconTint">@color/white</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+    </style>
+
     <!-- Estilos de texto -->
     <style name="TextAppearance.App.Headline" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="android:textSize">24sp</item>
@@ -42,10 +51,12 @@
 
     <!-- Estilo para TextInputLayout -->
     <style name="AppTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/chathamsBlue</item>
-        <item name="hintTextColor">@color/chathamsBlue</item>
-        <item name="android:textColorHint">@color/text_secondary_dark</item>
+        <item name="boxStrokeColor">@color/casablanca</item>
+        <item name="hintTextColor">@color/card_background_light</item>
+        <item name="android:textColorHint">@color/card_background_light</item>
         <item name="boxBackgroundColor">#99000000</item>
+        <item name="passwordToggleTint">@color/card_background_light</item>
+        <item name="endIconTint">@color/card_background_light</item>
     </style>
 
     <!-- Estilo para Cards -->
@@ -68,11 +79,9 @@
         <item name="android:textColor">@color/text_primary_dark</item>
     </style>
 
-    <!-- Actualizar estilo del Toolbar para aplicar el nuevo estilo de menú -->
-    <style name="AppToolbarStyle" parent="Widget.MaterialComponents.Toolbar.Primary">
-        <item name="android:background">@color/chathamsBlue</item>
-        <item name="titleTextColor">@color/white</item>
-        <item name="navigationIconTint">@color/white</item>
-        <item name="popupTheme">@style/AppTheme.PopupOverlay</item>
+    <style name="RoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
     </style>
+
 </resources>

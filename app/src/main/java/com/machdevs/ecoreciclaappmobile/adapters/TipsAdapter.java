@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.machdevs.ecoreciclaappmobile.R;
 import com.machdevs.ecoreciclaappmobile.models.TipItem;
@@ -45,19 +46,19 @@ public class TipsAdapter extends RecyclerView.Adapter<TipsAdapter.TipViewHolder>
 
     static class TipViewHolder extends RecyclerView.ViewHolder {
         TextView tvTipTitle, tvTipContent;
-        View backgroundView;
+        View itemView;
 
         TipViewHolder(View itemView) {
             super(itemView);
+            this.itemView = itemView;
             tvTipTitle = itemView.findViewById(R.id.tvTipTitle);
             tvTipContent = itemView.findViewById(R.id.tvTipContent);
-            backgroundView = itemView.findViewById(R.id.backgroundView);
         }
 
-        void bind(TipItem item, int gradientResId) {
+        void bind(TipItem item, int gradientDrawable) {
             tvTipTitle.setText(item.getTitle());
             tvTipContent.setText(item.getContent());
-            backgroundView.setBackgroundResource(gradientResId);
+            itemView.setBackground(ContextCompat.getDrawable(itemView.getContext(), gradientDrawable));
         }
     }
 }
