@@ -9,27 +9,58 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
 import com.machdevs.ecoreciclaappmobile.R;
 import com.machdevs.ecoreciclaappmobile.databinding.ActivityPrincipalPageBinding;
+import com.machdevs.ecoreciclaappmobile.utils.RecyclingManager;
 import com.machdevs.ecoreciclaappmobile.utils.SharedPreferencesHelper;
 
 public class PrincipalPageActivity extends AppCompatActivity {
 
-    private ActivityPrincipalPageBinding principalPageBinding;
+    private ActivityPrincipalPageBinding binding;
     private SharedPreferencesHelper prefsHelper;
+    private RecyclingManager recyclingManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        principalPageBinding = DataBindingUtil.setContentView(this, R.layout.activity_principal_page);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_principal_page);
         prefsHelper = new SharedPreferencesHelper(this);
+        recyclingManager = new RecyclingManager(this);
 
-        setSupportActionBar(principalPageBinding.toolbar);
+        setSupportActionBar(binding.toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("EcoRecicla");
+            getSupportActionBar().setTitle(R.string.app_name);
         }
 
         setupListeners();
+        displayWelcomeMessage();
+    }
+
+    private void setupListeners() {
+        binding.btnCategories.setOnClickListener(v -> openCategoriesPage());
+        binding.btnStatistics.setOnClickListener(v -> openStatisticsPage());
+        binding.btnTips.setOnClickListener(v -> openTipsPage());
+    }
+
+    private void displayWelcomeMessage() {
+        String userName = prefsHelper.getUserFullName();
+        if (userName.isEmpty()) {
+            userName = getString(R.string.default_user_name);
+        }
+        binding.tvWelcome.setText(getString(R.string.welcome_message, userName));
+    }
+
+    private void openCategoriesPage() {
+        startActivity(new Intent(this, CategoriesPageActivity.class));
+    }
+
+    private void openStatisticsPage() {
+        startActivity(new Intent(this, StatisticsPageActivity.class));
+    }
+
+    private void openTipsPage() {
+        startActivity(new Intent(this, TipsPageActivity.class));
     }
 
     @Override
@@ -55,44 +86,23 @@ public class PrincipalPageActivity extends AppCompatActivity {
 
     private void showClearDataConfirmationDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("Borrar datos")
-                .setMessage("¿Estás seguro de que quieres borrar todos los datos de usuario? Esta acción no se puede deshacer.")
-                .setPositiveButton("Sí", (dialog, which) -> clearAllData())
-                .setNegativeButton("No", null)
+                .setTitle(R.string.clear_data_title)
+                .setMessage(R.string.clear_data_message)
+                .setPositiveButton(R.string.yes, (dialog, which) -> clearAllData())
+                .setNegativeButton(R.string.no, null)
                 .show();
     }
 
     private void clearAllData() {
         prefsHelper.clearAllUserData();
-        Toast.makeText(this, "Todos los datos han sido borrados", Toast.LENGTH_SHORT).show();
-        // Redirigir al usuario a la pantalla de login
-        Intent intent = new Intent(this, LoginPageActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
-    }
-
-    private void setupListeners() {
-        principalPageBinding.btnCategories.setOnClickListener(v -> {
-            Intent intent = new Intent(PrincipalPageActivity.this, CategoriesPageActivity.class);
-            startActivity(intent);
-        });
-
-        principalPageBinding.btnStatistics.setOnClickListener(v -> {
-            Intent intent = new Intent(PrincipalPageActivity.this, StatisticsPageActivity.class);
-            startActivity(intent);
-        });
-
-        principalPageBinding.btnTips.setOnClickListener(v -> {
-            Intent intent = new Intent(PrincipalPageActivity.this, TipsPageActivity.class);
-            startActivity(intent);
-        });
+        Toast.makeText(this, R.string.data_cleared, Toast.LENGTH_SHORT).show();
+        logout();
     }
 
     private void logout() {
         prefsHelper.setUserLoggedIn(false);
         prefsHelper.clearUserSession();
-        Intent intent = new Intent(PrincipalPageActivity.this, LoginPageActivity.class);
+        Intent intent = new Intent(this, LoginPageActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();

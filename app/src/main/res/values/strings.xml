@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EcoReciclaAppMobile2024</string>
+    <string name="app_name">EcoRecicla App Mobile 2024</string>
     <string name="go_to_login_page">GO TO LOGIN PAGE</string>
     <string name="ecorecicla_login">EcoRecicla \n\t\t\t\t Login</string>
     <string name="et_password_login_page">Password</string>
@@ -26,4 +26,39 @@
     <string name="por_favor_llena_los_campos_para_registrarte">Por favor llena los campos para registrarte</string>
     <string name="registro">REGISTRO</string>
     <string name="estadisticas_de_reciclaje">Estadísticas de Reciclaje</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_categories">Categorías</string>
+    <string name="title_statistics">Estadísticas</string>
+    <string name="title_tips">Consejos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_fragment">Home Fragment</string>
+    <string name="tips_fragment">Tips Fragment</string>
+    <string name="categories_fragment">Categories Fragment</string>
+    <string name="statistics_fragment">Statistics Fragment</string>
+    <string name="welcome_message">¡Bienvenido, %1$s!</string>
+    <string name="consejos_de_reciclaje">Consejos de Reciclaje</string>
+    <string name="default_user_name">Usuario</string>
+
+    <string name="clear_data_title">Borrar datos</string>
+    <string name="clear_data_message">¿Estás seguro de que quieres borrar todos los datos de usuario? Esta acción no se puede deshacer.</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="data_cleared">Todos los datos han sido borrados</string>
+    <string name="app_logo_description">Logo de la aplicación</string>
+    <string name="categories_description">Ver y registrar categorías de reciclaje</string>
+    <string name="view_categories">Ver categorías</string>
+
+    <string name="statistics_description">Ver estadísticas detalladas de tu reciclaje</string>
+    <string name="view_statistics">Ver estadísticas</string>
+    <string name="tips_description">Obtén consejos personalizados para mejorar tu reciclaje</string>
+    <string name="view_tips">Ver consejos</string>
+    <string name="registro_de_reciclaje">Registro de Reciclaje</string>
+
+    <string name="cantidad">Cantidad</string>
+    <string name="valor">Valor</string>
+    <string name="guardar">Guardar</string>
+    <string name="Editar">Editar</string>
+    <string name="Eliminar">Eliminar</string>
+    <string name="actualizar">Actualizar</string>
+
 </resources>

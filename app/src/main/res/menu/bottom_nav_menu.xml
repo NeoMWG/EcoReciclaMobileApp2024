@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/baseline_add_home_work_24"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_categories"
+        android:icon="@drawable/ic_categories"
+        android:title="@string/title_categories" />
+
+    <item
+        android:id="@+id/navigation_statistics"
+        android:icon="@drawable/ic_statistics"
+        android:title="@string/title_statistics" />
+
+    <item
+        android:id="@+id/navigation_tips"
+        android:icon="@drawable/ic_tips"
+        android:title="@string/title_tips" />
+</menu>

@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
+    <data></data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -15,88 +13,171 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.Toolbar
+            <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+                app:titleTextColor="?attr/colorOnPrimary" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/main"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/background_login_page"
-                tools:context=".activities.PrincipalPageActivity">
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_blue_blur"
+                android:padding="16dp">
 
                 <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="80dp"
-                    android:layout_marginBottom="16dp"
+                    android:id="@+id/ivLogo"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="24dp"
+                    android:contentDescription="@string/app_logo_description"
                     android:src="@drawable/main_icon_ecorecicla_app_main"
-                    app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintWidth_percent="0.25" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tvWelcome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/bienvenido_a_ecorecicla"
-                    android:textColor="@color/copper"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/TextAppearance.App.Headline"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                    app:layout_constraintTop_toBottomOf="@id/ivLogo"
+                    tools:text="@string/welcome_message" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnCategories"
-                    style="@style/ModernButton"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCategories"
+                    style="@style/AppCardStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="32dp"
-                    android:text="@string/categorias"
-                    app:icon="@drawable/ic_categories"
-                    app:iconGravity="textTop"
+                    android:layout_marginTop="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+                    app:layout_constraintTop_toBottomOf="@id/tvWelcome">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnStatistics"
-                    style="@style/ModernButton"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/categorias"
+                            android:textAppearance="@style/TextAppearance.App.Title" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/categories_description"
+                            android:textAppearance="@style/TextAppearance.App.Body" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCategories"
+                            style="@style/CustomTextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/view_categories" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardStatistics"
+                    style="@style/AppCardStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="32dp"
-                    android:text="@string/estadisticas"
-                    app:icon="@drawable/ic_statistics"
-                    app:iconGravity="textTop"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnCategories" />
+                    app:layout_constraintTop_toBottomOf="@id/cardCategories">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnTips"
-                    style="@style/ModernButton"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/estadisticas"
+                            android:textAppearance="@style/TextAppearance.App.Title" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/statistics_description"
+                            android:textAppearance="@style/TextAppearance.App.Body" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnStatistics"
+                            style="@style/CustomTextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/view_statistics" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardTips"
+                    style="@style/AppCardStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="32dp"
-                    android:text="@string/consejos"
-                    app:icon="@drawable/ic_tips"
-                    app:iconGravity="textTop"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnStatistics" />
+                    app:layout_constraintTop_toBottomOf="@id/cardStatistics">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/consejos"
+                            android:textAppearance="@style/TextAppearance.App.Title" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/tips_description"
+                            android:textAppearance="@style/TextAppearance.App.Body" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnTips"
+                            style="@style/CustomTextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/view_tips" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

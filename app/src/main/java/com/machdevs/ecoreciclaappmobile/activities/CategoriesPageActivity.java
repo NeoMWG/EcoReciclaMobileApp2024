@@ -1,38 +1,52 @@
 package com.machdevs.ecoreciclaappmobile.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
 import com.machdevs.ecoreciclaappmobile.R;
+import com.machdevs.ecoreciclaappmobile.adapters.CategoryAdapter;
 import com.machdevs.ecoreciclaappmobile.databinding.ActivityCategoriesPageBinding;
-
-import java.util.Arrays;
+import com.machdevs.ecoreciclaappmobile.models.RecyclingCategory;
+import com.machdevs.ecoreciclaappmobile.utils.RecyclingManager;
 import java.util.List;
 
 public class CategoriesPageActivity extends AppCompatActivity {
 
-    private ActivityCategoriesPageBinding categoriesBinding;
+    private ActivityCategoriesPageBinding binding;
+    private RecyclingManager recyclingManager;
+    private CategoryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        categoriesBinding = DataBindingUtil.setContentView(this, R.layout.activity_categories_page);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_categories_page);
+        recyclingManager = new RecyclingManager(this);
 
-        List<String> categories = Arrays.asList(
-                "Plástico",
-                "Papel y Cartón",
-                "Vidrio",
-                "Metales",
-                "Orgánicos"
-        );
+        setSupportActionBar(binding.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, categories);
+        setupRecyclerView();
+    }
 
-        categoriesBinding.listViewCategories.setAdapter(adapter);
+    private void setupRecyclerView() {
+        List<RecyclingCategory> categories = recyclingManager.getCategories();
+        adapter = new CategoryAdapter(categories, this::openRecyclingEntryPage);
+        binding.recyclerViewCategories.setLayoutManager(new LinearLayoutManager(this));
+        binding.recyclerViewCategories.setAdapter(adapter);
+    }
+
+    private void openRecyclingEntryPage(RecyclingCategory category) {
+        Intent intent = new Intent(CategoriesPageActivity.this, RecyclingEntryActivity.class);
+        intent.putExtra("SELECTED_CATEGORY", category);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

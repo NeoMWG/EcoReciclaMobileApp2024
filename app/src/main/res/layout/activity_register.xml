@@ -16,7 +16,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_login_page"
+        android:background="@drawable/background_blue_blur"
         tools:context=".activities.RegisterActivity">
 
         <ImageView
@@ -68,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/registro"
-                    android:textColor="?attr/colorOnSurface"
+                    android:textColor="@color/casablanca"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 

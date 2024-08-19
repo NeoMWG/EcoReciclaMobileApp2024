@@ -3,17 +3,27 @@ package com.machdevs.ecoreciclaappmobile.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.machdevs.ecoreciclaappmobile.models.RecyclingEntry;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
 public class SharedPreferencesHelper {
     private static final String PREF_NAME = "EcoReciclaPrefs";
     private static final String KEY_USER_EMAIL = "user_email";
     private static final String KEY_USER_LOGGED_IN = "user_logged_in";
     private static final String KEY_USER_FULL_NAME = "user_full_name";
     private static final String KEY_USER_PASSWORD = "user_password";
+    private static final String KEY_RECYCLING_ENTRIES = "recycling_entries";
 
     private SharedPreferences sharedPreferences;
+    private Gson gson;
 
     public SharedPreferencesHelper(Context context) {
         sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        gson = new Gson();
     }
 
     public void saveUserData(String fullName, String email, String password) {
@@ -52,5 +62,21 @@ public class SharedPreferencesHelper {
 
     public String getUserFullName() {
         return sharedPreferences.getString(KEY_USER_FULL_NAME, "");
+    }
+
+    public void saveRecyclingEntries(List<RecyclingEntry> entries) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+            String json = gson.toJson(entries);
+        editor.putString(KEY_RECYCLING_ENTRIES, json);
+        editor.apply();
+    }
+
+    public List<RecyclingEntry> getRecyclingEntries() {
+        String json = sharedPreferences.getString(KEY_RECYCLING_ENTRIES, null);
+        if (json == null) {
+            return new ArrayList<>();
+        }
+        Type type = new TypeToken<List<RecyclingEntry>>() {}.getType();
+        return gson.fromJson(json, type);
     }
 }
