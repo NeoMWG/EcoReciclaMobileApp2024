@@ -8,15 +8,6 @@
         <item name="cornerRadius">8dp</item>
     </style>
 
-    <!-- Actualizar estilo del Toolbar para aplicar el nuevo estilo de menú -->
-    <style name="AppToolbarStyle" parent="Widget.MaterialComponents.Toolbar.Primary">
-        <item name="android:background">@color/chathamsBlue</item>
-        <item name="titleTextColor">@color/white</item>
-        <item name="navigationIconTint">@color/white</item>
-        <item name="android:elevation">0dp</item>
-        <item name="android:minHeight">?attr/actionBarSize</item>
-    </style>
-
     <!-- Estilos de texto -->
     <style name="TextAppearance.App.Headline" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="android:textSize">24sp</item>
@@ -74,14 +65,28 @@
         <item name="android:textColor">@color/card_background_light</item>
     </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
-        <item name="android:background">@color/card_background_dark</item>
-        <item name="android:textColor">@color/text_primary_dark</item>
-    </style>
-
     <style name="RoundedImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:background">@color/card_background_dark</item>
+        <item name="android:textColor">@color/copper</item>
+    </style>
+
+    <!-- Actualizar estilo del Toolbar para aplicar el nuevo estilo de menú -->
+    <style name="AppToolbarStyle" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/chathamsBlue</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="navigationIconTint">@color/white</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="titleCentered">true</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
+        <item name="cornerSize">10%</item>
     </style>
 
 </resources>

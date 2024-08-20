@@ -49,14 +49,12 @@ public class TipsPageActivity extends AppCompatActivity {
     private List<TipItem> generateTips() {
         List<TipItem> tips = new ArrayList<>();
 
-        // Consejo personalizado basado en la categoría menos reciclada
         RecyclingCategory leastRecycledCategory = recyclingManager.getLeastRecycledCategory();
         if (leastRecycledCategory != null) {
             tips.add(new TipItem("Mejora tu reciclaje de " + leastRecycledCategory.getName(),
                     "Intenta aumentar tu reciclaje de " + leastRecycledCategory.getName() + ". Cada pequeño esfuerzo cuenta."));
         }
 
-        // Consejos personalizados basados en el rendimiento de cada categoría
         for (RecyclingCategory category : recyclingManager.getCategories()) {
             double averageAmount = recyclingManager.calculateAverageByCategory(category);
             if (averageAmount < 5) {
@@ -68,7 +66,6 @@ public class TipsPageActivity extends AppCompatActivity {
             }
         }
 
-        // Consejos generales
         tips.add(new TipItem("Separación de residuos",
                 "Separa tus residuos en diferentes contenedores: orgánicos, papel y cartón, plásticos, vidrio y metal."));
         tips.add(new TipItem("Reducir el consumo",

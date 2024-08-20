@@ -35,7 +35,7 @@
     <string name="tips_fragment">Tips Fragment</string>
     <string name="categories_fragment">Categories Fragment</string>
     <string name="statistics_fragment">Statistics Fragment</string>
-    <string name="welcome_message">¡Bienvenido, %1$s!</string>
+    <string name="welcome_message">¡Bienvenid@, %1$s!</string>
     <string name="consejos_de_reciclaje">Consejos de Reciclaje</string>
     <string name="default_user_name">Usuario</string>
 
@@ -46,12 +46,9 @@
     <string name="data_cleared">Todos los datos han sido borrados</string>
     <string name="app_logo_description">Logo de la aplicación</string>
     <string name="categories_description">Ver y registrar categorías de reciclaje</string>
-    <string name="view_categories">Ver categorías</string>
 
     <string name="statistics_description">Ver estadísticas detalladas de tu reciclaje</string>
-    <string name="view_statistics">Ver estadísticas</string>
     <string name="tips_description">Obtén consejos personalizados para mejorar tu reciclaje</string>
-    <string name="view_tips">Ver consejos</string>
     <string name="registro_de_reciclaje">Registro de Reciclaje</string>
 
     <string name="cantidad">Cantidad</string>
@@ -60,5 +57,9 @@
     <string name="Editar">Editar</string>
     <string name="Eliminar">Eliminar</string>
     <string name="actualizar">Actualizar</string>
+
+    <string name="view_categories">Ver Categorías</string>
+    <string name="view_statistics">Ver Estadísticas</string>
+    <string name="view_tips">Ver Consejos</string>
 
 </resources>

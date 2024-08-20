@@ -40,6 +40,7 @@
                     android:layout_marginTop="24dp"
                     android:contentDescription="@string/app_logo_description"
                     android:src="@drawable/main_icon_ecorecicla_app_main"
+                    android:scaleType="centerCrop"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -50,134 +51,190 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:textAppearance="@style/TextAppearance.App.Headline"
+                    android:textColor="@android:color/white"
+                    android:elevation="4dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/ivLogo"
                     tools:text="@string/welcome_message" />
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardCategories"
-                    style="@style/AppCardStyle"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/categoriesLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/background_blur"
+                    android:padding="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvWelcome">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tvCategoriesTitle"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:text="@string/categorias"
+                        android:textAppearance="@style/TextAppearance.App.Title"
+                        android:textColor="@android:color/white"
+                        android:elevation="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/categorias"
-                            android:textAppearance="@style/TextAppearance.App.Title" />
+                    <TextView
+                        android:id="@+id/tvCategoriesDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/categories_description"
+                        android:textAppearance="@style/TextAppearance.App.Body"
+                        android:textColor="@android:color/white"
+                        android:elevation="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvCategoriesTitle" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/categories_description"
-                            android:textAppearance="@style/TextAppearance.App.Body" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCategories"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/view_categories"
+                        android:textColor="@color/casablanca"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvCategoriesDescription" />
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnCategories"
-                            style="@style/CustomTextButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/view_categories" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardStatistics"
-                    style="@style/AppCardStyle"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/statisticsLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:background="@drawable/background_statistics"
+                    android:padding="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardCategories">
+                    app:layout_constraintTop_toBottomOf="@id/categoriesLayout">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tvStatisticsTitle"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:text="@string/estadisticas"
+                        android:textAppearance="@style/TextAppearance.App.Title"
+                        android:textColor="@android:color/white"
+                        android:elevation="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/estadisticas"
-                            android:textAppearance="@style/TextAppearance.App.Title" />
+                    <TextView
+                        android:id="@+id/tvStatisticsDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/statistics_description"
+                        android:textAppearance="@style/TextAppearance.App.Body"
+                        android:textColor="@android:color/white"
+                        android:elevation="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvStatisticsTitle" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/statistics_description"
-                            android:textAppearance="@style/TextAppearance.App.Body" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnStatistics"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/view_statistics"
+                        android:textColor="@color/casablanca"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvStatisticsDescription" />
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnStatistics"
-                            style="@style/CustomTextButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/view_statistics" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardTips"
-                    style="@style/AppCardStyle"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tipsLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:background="@drawable/background_tips"
+                    android:padding="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardStatistics">
+                    app:layout_constraintTop_toBottomOf="@id/statisticsLayout">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tvTipsTitle"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:text="@string/consejos"
+                        android:textAppearance="@style/TextAppearance.App.Title"
+                        android:textColor="@android:color/white"
+                        android:elevation="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/consejos"
-                            android:textAppearance="@style/TextAppearance.App.Title" />
+                    <TextView
+                        android:id="@+id/tvTipsDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/tips_description"
+                        android:textAppearance="@style/TextAppearance.App.Body"
+                        android:textColor="@android:color/white"
+                        android:elevation="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTipsTitle" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/tips_description"
-                            android:textAppearance="@style/TextAppearance.App.Body" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTips"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/view_tips"
+                        android:textColor="@color/casablanca"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTipsDescription" />
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnTips"
-                            style="@style/CustomTextButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/view_tips" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>

@@ -11,6 +11,6 @@
         android:title="Borrar todos los datos"
         android:icon="@drawable/ic_delete"
         app:showAsAction="never"
-        android:iconTint="@color/casablanca"
-        app:iconTint="@color/casablanca"/>
+        android:iconTint="@color/copper"
+        app:iconTint="@color/copper"/>
 </menu>
